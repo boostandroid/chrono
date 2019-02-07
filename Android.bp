@@ -1,0 +1,26 @@
+cc_library_shared {
+    name: "libboost_chrono",
+    export_include_dirs: ["include"],
+    vendor_available: true,
+    srcs: [
+        "src/chrono.cpp",
+        "src/process_cpu_clocks.cpp",
+        "src/thread_clock.cpp",
+    ],
+    header_libs: [
+    ],
+    target: {
+        android: {
+            cflags: [
+                "-fPIC",
+                "-DPIC",
+            ],
+        },
+        not_windows: {
+            cflags: [
+                "-fPIC",
+                "-DPIC",
+            ],
+        },
+    },
+}
