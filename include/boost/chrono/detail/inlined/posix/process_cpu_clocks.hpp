@@ -115,6 +115,7 @@ process_real_cpu_clock::time_point process_real_cpu_clock::now(
             }
         }
     }
+    return time_point();
 }
 #endif
 
@@ -191,6 +192,7 @@ process_user_cpu_clock::time_point process_user_cpu_clock::now(
             }
         }
     }
+    return time_point();
 }
 #endif
 
@@ -268,6 +270,7 @@ process_system_cpu_clock::time_point process_system_cpu_clock::now(
             }
         }
     }
+    return time_point();
 }
 #endif
 
@@ -347,7 +350,7 @@ process_cpu_clock::time_point process_cpu_clock::now(
             }
         }
     }
-
+    return time_point();
 }
 #endif
 
