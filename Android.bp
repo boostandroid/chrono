@@ -8,18 +8,39 @@ cc_library_shared {
         "src/thread_clock.cpp",
     ],
     header_libs: [
+        "libboost_config",
+        "libboost_predef",
+        "libboost_mpl",
+        "libboost_preprocessor",
+        "libboost_ratio",
+        "libboost_type_traits",
+        "libboost_core",
+        "libboost_integer",
+        "libboost_static_assert",
+        "libboost_throw_exception",
+        "libboost_assert",
+        "libboost_utility",
+    ],
+    shared_libs: [
+        "libboost_system",
     ],
     target: {
         android: {
             cflags: [
                 "-fPIC",
                 "-DPIC",
+                "-fexceptions",
+                "-Wno-error=non-virtual-dtor",
+                "-Wno-error=return-type",
             ],
         },
         not_windows: {
             cflags: [
                 "-fPIC",
                 "-DPIC",
+                "-fexceptions",
+                "-Wno-error=non-virtual-dtor",
+                "-Wno-error=return-type",
             ],
         },
     },
